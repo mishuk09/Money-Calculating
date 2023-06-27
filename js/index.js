@@ -40,16 +40,26 @@ document.getElementById('save-btn').addEventListener('click', function() {
     console.log(savingAmountResult);
 
     //calculate parcentage of remaning balence
-    const afterExpensesBalence = document.getElementById('balence');
-    const afterExpensesBalenceResult = afterExpensesBalence.value;
+    const balenceAmoount = document.getElementById('balence');
+    const balenceAmoountResult = balenceAmoount.innerText;
+    console.log(balenceAmoountResult);
+
+
 
     //calculate saving amount
-
-    const parcentage = (savingAmountResult / 100) * afterExpensesBalenceResult;
+    const parcentage = (parseInt(savingAmountResult) / 100) * parseInt(balenceAmoountResult);
+    console.log(parcentage);
     //show calculate amount
     const savingAmount = document.getElementById('saving-amount');
-    savingAmount.innerText = parseInt(parcentage);
+    savingAmount.innerText = parseFloat(parcentage);
 
+
+    //minus after expensis to remaning
+
+    const remaninBalence = document.getElementById('reaming-balence');
+
+
+    remaninBalence.innerText = parseFloat(balenceAmoountResult) - parseFloat(parcentage);
 
 
 })
